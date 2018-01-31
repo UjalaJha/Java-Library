@@ -39,10 +39,9 @@ public class LibraryUI extends javax.swing.JFrame {
         
     public LibraryUI() {
         this.setUndecorated(true);
-        
         this.setVisible(true);
         
-        
+      
         initComponents();
         
         this.addMouseListener(new MouseAdapter()

@@ -6,6 +6,8 @@
 package library.dynamicpanels;
 
 import javax.swing.JPanel;
+import library.Addbooks;
+import library.LibraryUI;
 
 /**
  *
@@ -99,10 +101,13 @@ public class PanelBooks extends javax.swing.JPanel {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jPanel3MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel3MousePressed(evt);
+            }
         });
 
         jLabel4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(45, 118, 232));
+        jLabel4.setForeground(new java.awt.Color(0, 255, 0));
         jLabel4.setText("Add Books");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/images/icons8_Book_35px.png"))); // NOI18N
@@ -295,6 +300,16 @@ public class PanelBooks extends javax.swing.JPanel {
         // TODO add your handling code here:
         resetColor(jPanel5);
     }//GEN-LAST:event_jPanel5MouseExited
+
+    private void jPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MousePressed
+        // TODO add your handling code here:
+        LibraryUI obj=new LibraryUI();
+        obj.setVisible(false);
+        obj.setVisible(false);
+        Addbooks ob=new Addbooks();
+        ob.setVisible(true);
+        
+    }//GEN-LAST:event_jPanel3MousePressed
      public void setColor(JPanel panel)
     {
         panel.setBackground(new java.awt.Color(187, 187, 187));
