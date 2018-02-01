@@ -31,36 +31,38 @@ public class LibraryUI extends javax.swing.JFrame {
     int posX=0,posY=0;
     GridBagLayout layout =new GridBagLayout();
         
-        PanelBooks books;
-        PanelCirculation circ;
-        PanelDashboard dash;
-        PanelMember mem;
+    PanelBooks books;
+    PanelCirculation circ;
+    PanelDashboard dash;
+    PanelMember mem;
         
         
     public LibraryUI() {
         this.setUndecorated(true);
         this.setVisible(true);
-        
-      
+//        this.setLocation(250, 250);
+        this.posX = 0;
+        this.posY = 0;
         initComponents();
         
         this.addMouseListener(new MouseAdapter()
         {
            public void mousePressed(MouseEvent e)
            {
-              posX=e.getX();
-              posY=e.getY();
+                posX=e.getX();
+                posY=e.getY();
+                
            }
         });
-        this.addMouseMotionListener(new MouseAdapter()
-        {
-             public void mouseDragged(MouseEvent evt)
-             {
-                        //sets frame position when mouse dragged			
-                        setLocation (evt.getXOnScreen()-posX,evt.getYOnScreen()-posY);
-
-             }
-        });
+//        this.addMouseMotionListener(new MouseAdapter()
+//        {
+//             public void mouseDragged(MouseEvent evt)
+//             {
+//                        //sets frame position when mouse dragged			
+//                        setLocation (evt.getXOnScreen()-posX,evt.getYOnScreen()-posY);
+//
+//             }
+//        });
         
         
         books = new PanelBooks();
@@ -89,8 +91,7 @@ public class LibraryUI extends javax.swing.JFrame {
         
     }
     
-    
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -611,12 +612,11 @@ public class LibraryUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -745,7 +745,7 @@ public class LibraryUI extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
 //                new LibraryUI().setUndecorated(true);
-                 new LibraryUI();
+                 new LibraryUI();       
                 
             }
         });

@@ -21,7 +21,7 @@ public class javaconnect {
     public static Connection ConnecrDb(){
        try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/java","root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/java","root","");
             System.out.print("Database is connected !");
             return conn;
             
@@ -34,12 +34,6 @@ public class javaconnect {
         
 }
 
-    PreparedStatement prepareStatement(String sql) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    void close() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
 

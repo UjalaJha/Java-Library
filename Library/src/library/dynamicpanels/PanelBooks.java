@@ -5,8 +5,10 @@
  */
 package library.dynamicpanels;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-import library.Addbooks;
+import javax.swing.SwingUtilities;
+import library.Addbook;
 import library.LibraryUI;
 
 /**
@@ -18,6 +20,7 @@ public class PanelBooks extends javax.swing.JPanel {
     /**
      * Creates new form PanelBooks
      */
+    
     public PanelBooks() {
         initComponents();
     }
@@ -261,6 +264,9 @@ public class PanelBooks extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+        
+    
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered
         // TODO add your handling code here:
         setColor(jPanel4);
@@ -303,10 +309,20 @@ public class PanelBooks extends javax.swing.JPanel {
 
     private void jPanel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MousePressed
         // TODO add your handling code here:
-        LibraryUI obj=new LibraryUI();
-        obj.setVisible(false);
-        obj.setVisible(false);
-        Addbooks ob=new Addbooks();
+        
+        // Get reference to parent frame of this
+        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        
+        // Make it invisible (BAD)
+        topFrame.setVisible(false);
+        
+        
+        // Kill it (Not working)
+//        topFrame.dispose();
+                
+                
+        // Create new Frame
+        Addbook ob=new Addbook();
         ob.setVisible(true);
         
     }//GEN-LAST:event_jPanel3MousePressed
@@ -336,3 +352,5 @@ public class PanelBooks extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
+    
+
