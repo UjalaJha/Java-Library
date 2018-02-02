@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import library.Addbook;
 import library.LibraryUI;
+import library.browsebooks;
 
 /**
  *
@@ -149,10 +150,13 @@ public class PanelBooks extends javax.swing.JPanel {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jPanel6MouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel6MousePressed(evt);
+            }
         });
 
         jLabel5.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(45, 118, 232));
+        jLabel5.setForeground(new java.awt.Color(0, 255, 0));
         jLabel5.setText("Browse Books");
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/library/images/icons8_Search_Property_35px.png"))); // NOI18N
@@ -326,6 +330,24 @@ public class PanelBooks extends javax.swing.JPanel {
         ob.setVisible(true);
         
     }//GEN-LAST:event_jPanel3MousePressed
+
+    private void jPanel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MousePressed
+        // TODO add your handling code here:
+        JFrame topFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        
+        // Make it invisible (BAD)
+        topFrame.setVisible(false);
+        
+        
+        // Kill it (Not working)
+//        topFrame.dispose();
+                
+                
+        // Create new Frame
+        browsebooks ob=new browsebooks();
+        ob.setVisible(true);
+        
+    }//GEN-LAST:event_jPanel6MousePressed
      public void setColor(JPanel panel)
     {
         panel.setBackground(new java.awt.Color(187, 187, 187));
