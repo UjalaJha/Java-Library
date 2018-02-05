@@ -78,6 +78,10 @@ public class browsebooks extends javax.swing.JFrame {
                     public void insertUpdate(DocumentEvent de) {
 //                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                         System.out.println(txt.getDocument().getLength());
+                        // Clear that jtextfield
+//                        insertupdate or remove update me?
+//                        if that works for insert update, copy it in remove update
+//                        sun wait yeh old file hai mai try karti hu
 //                        printText();
                         
                     }

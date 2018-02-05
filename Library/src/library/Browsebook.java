@@ -71,6 +71,47 @@ public class Browsebook extends javax.swing.JFrame {
                     }
                 }       
         );
+        
+        jTextField1.getDocument().addDocumentListener(
+                new DocumentListener() 
+                {
+                    @Override
+                    public void insertUpdate(DocumentEvent de) {
+//                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        jTextField3.setText(" ");
+                        jTextField4.setText(" ");
+                        jTextField5.setText(" ");
+                        jTextField6.setText(" "); 
+                    }
+
+                    @Override
+                    public void removeUpdate(DocumentEvent de) {
+                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        jTextField3.setText(" ");
+                        jTextField4.setText(" ");
+                        jTextField5.setText(" ");
+                        jTextField6.setText(" "); 
+                        // Wait a min
+//                        System.out.println(jTextField1.getDocument().getLength());
+                    }
+
+                    @Override
+                    public void changedUpdate(DocumentEvent de) {
+//                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//                        System.out.println("gg");
+                        jTextField3.setText(" ");
+                        jTextField4.setText(" ");
+                        jTextField5.setText(" ");
+                        jTextField6.setText(" "); 
+                    }
+            }
+        
+        );
+        
+        
+        
+        
+        
         DefaultTableModel model = new DefaultTableModel(new String[]{"Books Name", "Author", "Book ID","Publication"}, 0);
         try
         {
@@ -696,7 +737,7 @@ public class Browsebook extends javax.swing.JFrame {
                 
                 String sql="Select * from books where ID = ?";
                 pst=conn.prepareStatement(sql);
-                pst.setString(1,this.jTextField1.getText());
+                pst.setString(1,this.jTextField1.getText().trim());
                 rs=pst.executeQuery();
                 if (rs.next()==false)
                 {
