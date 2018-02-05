@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import library.Addbook;
 import library.LibraryUI;
-import library.browsebooks;
+import library.Browsebook;
 
 /**
  *
@@ -344,7 +344,7 @@ public class PanelBooks extends javax.swing.JPanel {
                 
                 
         // Create new Frame
-        browsebooks ob=new browsebooks();
+        Browsebook ob=new Browsebook();
         ob.setVisible(true);
         
     }//GEN-LAST:event_jPanel6MousePressed
